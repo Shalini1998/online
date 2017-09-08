@@ -1,15 +1,23 @@
 class TasksController < ApplicationController
+  load_and_authorize_resource
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks if user_signed_in?
+    if user_signed_in?
+      if current_user.developer?
+        @tasks = current_user.tasks current_user.developer? 
+      elsif current_user.admin?
+        @tasks = Task.all
+      end
+    end
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @task = Task.find(params[:id])
+      # authorize! :read, @tasks
   end
 
   # GET /tasks/new
@@ -41,7 +49,8 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1.json
   def update
     respond_to do |format|
-      if @task.update(task_params)
+      if @task.update_attributes(task_params)
+      # if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
