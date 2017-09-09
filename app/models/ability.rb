@@ -8,8 +8,7 @@ class Ability
       if user.admin?
         can :manage, :all
       elsif user.developer?
-        can [:create,:read], Task
-        can :update, Task, user_id: user.id
+        can :manage, Task
       else
         can :read, :all
       end
