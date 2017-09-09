@@ -16,6 +16,8 @@
         </div>
       <% end %>
 
+      <%= f.hidden_field :user_id, value: current_user.id if user_signed_in? %>
+
       <div class="form-group">
         <%= f.label :title, :class => 'control-label col-lg-2' %>
         <div class="col-lg-10">
