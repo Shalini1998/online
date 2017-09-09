@@ -2,6 +2,10 @@
 <div class="page-header">
  <!--  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1> -->
 </div>
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4>Hi! <%= current_user.email %> check your status index.</h4>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
