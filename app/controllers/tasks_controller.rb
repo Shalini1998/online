@@ -1,16 +1,16 @@
   class TasksController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   # GET /tasks
   # GET /tasks.json
   def index
-    if user_signed_in?
-      if current_user.developer?
-        @tasks = current_user.tasks current_user.developer? 
-      elsif current_user.admin?
-        @tasks = Task.all
-      end
-    end
+    # if user_signed_in?
+    #   if current_user.developer?
+    #     @tasks = current_user.tasks current_user.developer? 
+    #   elsif current_user.admin?
+    #   end
+    # end
+  @tasks = Task.all
   end
 
   # GET /tasks/1
@@ -36,6 +36,7 @@
 
     respond_to do |format|
       if @task.save
+        UserMailer.welcome_email(current_user).deliver_now
         format.html { redirect_to @task, notice: 'Status was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else

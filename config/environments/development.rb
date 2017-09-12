@@ -48,9 +48,9 @@ Rails.application.configure do
 
 
 #These settings are for the sending out email for active admin and consequently the   devise mailer
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
 ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.smtp_settings = {
     :user_name => 'rksingh.pis@gmail.com',
     :password => 'ravi1308',
