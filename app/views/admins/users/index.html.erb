@@ -1,0 +1,29 @@
+<div class="well">
+  <h1 class="text-center">User List</h1>
+</div>
+<div class="pull-right">
+  <%= link_to "Add New User", new_users_admins_users_path, class: "btn btn-primary btn-lg" %>
+</div>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+         
+          <td><%= user.email %></td>
+          <td><%= user.password %></td>
+          <td><%= user.role %></td>
+          <td><%= link_to "Edit", edit_users_admins_user_path(user), class: "btn btn-warning btn-xs" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
