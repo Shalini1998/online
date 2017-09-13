@@ -10,7 +10,7 @@
     #   elsif current_user.admin?
     #   end
     # end
-  @tasks = Task.all
+    @tasks = Task.all
   end
 
   # GET /tasks/1
