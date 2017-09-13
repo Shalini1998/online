@@ -20,7 +20,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= link_to task.title, task_path(task) %></td>
-        <td><%= task.user.email %></td>
+        <td><%= task.try(:user).try(:email) %></td>
         <td><%= task.status %></td>
         <td><%= task.created_at.strftime("%d-%b-%y") %></td>
         <td>

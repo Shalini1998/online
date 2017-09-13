@@ -4,13 +4,13 @@
   # GET /tasks
   # GET /tasks.json
   def index
-    # if user_signed_in?
-    #   if current_user.developer?
-    #     @tasks = current_user.tasks current_user.developer? 
-    #   elsif current_user.admin?
-    #   end
-    # end
-    @tasks = Task.all
+    if user_signed_in?
+      if current_user.developer?
+        @tasks = current_user.tasks current_user.developer? 
+      elsif current_user.admin?
+        @tasks = Task.all
+      end
+    end
   end
 
   # GET /tasks/1
