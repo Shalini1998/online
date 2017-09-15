@@ -1,19 +1,17 @@
 Rails.application.routes.draw do
   
   resources :tasks
-  devise_for :users
+  devise_for :users, controllers: {sessions: "users/sessions", registrations: "users/registrations", passwords: "users/passwords", confirmations: "users/confirmations", unlocks: "users/unlocks"}
+  
   root 'welcome#index'
 
-
-  namespace:admins do 
-    resources:users do
+  namespace :admins do 
+    resources :users do
       collection do
-        get:new_users
-        post:create_users
+        post :create_users
       end
       member do
-        get:edit_users
-        patch:update_users
+        patch :update_users
       end
     end
   end

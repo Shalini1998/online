@@ -1,9 +1,12 @@
 class Admins::UsersController < ApplicationController
+  
+  layout 'siteviews'
+
   def index
     @users = User.all
   end
 
-  def new_users
+  def new
     @user = User.new
   end
 
@@ -18,7 +21,7 @@ class Admins::UsersController < ApplicationController
     end
   end
 
-  def edit_users
+  def edit
     @user = User.find(params[:id])
   end
 

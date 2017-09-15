@@ -1,5 +1,5 @@
 <div class="col-md-8 col-md-offset-2">
-  <%= form_for [:admins, @user], :url => update_users_admins_user_path, method: "PATCH" do |f| %>
+  <%= form_for [:admins, @user], :html => { :class => "form-horizontal user" }, :url => update_users_admins_user_path, method: "patch" do |f| %>
 
     <% if @user.errors.any? %>
       <div id="error_expl" class="panel panel-danger">
