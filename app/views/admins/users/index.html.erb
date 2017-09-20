@@ -18,7 +18,7 @@
         <tr>
          
           <td><%= user.email %></td>
-          <td><%= user.contact_no %></td>
+          <td><%= user.try(:contact_no) %></td>
           <td><%= user.role %></td>
           <td>
             <%= link_to "Edit", edit_admins_user_path(user), class: "btn btn-warning btn-xs" %>
