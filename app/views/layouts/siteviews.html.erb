@@ -22,17 +22,8 @@
     <!-- Page Loader -->
     <div>
       <div class="loader">
-        <div class="preloader">
-          <div class="spinner-layer pl-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
-        <p>Please wait...</p>
+        
+        
       </div>
     </div>
     <!-- #END# Page Loader -->
@@ -269,7 +260,8 @@
 
 
           <div class="image">
-          <img src="ask_an_admin_3.png"/>
+
+          <%= image_tag "ask_an_admin_3.png", class: "img-responsive", style: "width:40%" %>
           <div class="info-container">
             <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
             <div class="email">john.doe@example.com</div>
@@ -295,9 +287,9 @@
           <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-              <a href="../../index.html">
+              <a href="/admins/users">
                 <i class="material-icons">home</i>
-                <span>Home</span>
+                <span>All Users</span>
               </a>
             </li>
             <li>

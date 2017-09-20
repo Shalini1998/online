@@ -1,5 +1,7 @@
 <div class="img">
 <div class="col-md-4 col-md-offset-4 user-form">
+
+<div style="margin-top: 30px;">
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Sign In Here</h3>
@@ -7,6 +9,7 @@
     <div class="panel-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
+
           <%= f.label :login %>
           <%= f.text_field :login, autofocus: true, class: "form-control" %>
         </div>
@@ -29,4 +32,5 @@
       <%= render "users/shared/links" %>
     </div>
   </div>
+</div>
 </div>

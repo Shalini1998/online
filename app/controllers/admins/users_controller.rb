@@ -1,6 +1,6 @@
 class Admins::UsersController < ApplicationController
   
-  layout 'siteviews'
+  # layout 'siteviews'
 
   def index
     @users = User.all

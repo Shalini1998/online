@@ -5,19 +5,21 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
 
-  namespace :admins do 
+  namespace :admins do
     resources :users do
       collection do
         post :create_users
+        get :edit_users
       end
       member do
         patch :update_users
       end
     end
   end
+  #get '/admins/users/:id/edit' => "admins/users#edit"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  get 'ajax/:action', to: 'ajax#:action', :defaults => { :format => 'json' }
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
