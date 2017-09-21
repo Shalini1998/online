@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       end
       member do
         patch :update_users
+        delete :destroy_users
       end
     end
   end
