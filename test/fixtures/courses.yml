@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  fee: 1
+  duration: 1
+  is_paid?: false
+
+two:
+  name: MyString
+  description: MyText
+  fee: 1
+  duration: 1
+  is_paid?: false

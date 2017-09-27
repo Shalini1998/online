@@ -17,7 +17,7 @@
   # GET /tasks/1.json
   def show
     @task = Task.find(params[:id])
-      # authorize! :read, @tasks
+       
   end
 
   # GET /tasks/new
@@ -27,6 +27,8 @@
 
   # GET /tasks/1/edit
   def edit
+    @task = Task.find(params[:id])
+   
   end
 
   # POST /tasks

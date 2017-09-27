@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :courses do 
+    collection do
+      get :new_enrollement
+      post :create_enrollement
+    end
+  end
+
+  resources :students
   resources :tasks
   devise_for :users, controllers: {sessions: "users/sessions", registrations: "users/registrations", passwords: "users/passwords", confirmations: "users/confirmations", unlocks: "users/unlocks"}
   
@@ -17,10 +25,13 @@ Rails.application.routes.draw do
       end
     end
   end
-  #get '/admins/users/:id/edit' => "admins/users#edit"
+
+
+
+  #get 'course/' => "admins/users#edit"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  get 'ajax/:action', to: 'ajax#:action', :defaults => { :format => 'json' }
+  #get 'ajax/:action', to: 'ajax#:action', :defaults => { :format => 'json' }
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

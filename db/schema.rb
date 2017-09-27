@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914061127) do
+ActiveRecord::Schema.define(version: 20170921112848) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "total_fee"
+    t.integer  "duration"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "models", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,6 +36,29 @@ ActiveRecord::Schema.define(version: 20170914061127) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_models_on_email", unique: true
     t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
+  end
+
+  create_table "student_courses", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "due_fee"
+    t.integer  "fee_paid"
+    t.boolean  "is_paid?"
+    t.index ["course_id"], name: "index_student_courses_on_course_id"
+    t.index ["student_id"], name: "index_student_courses_on_student_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.string   "collegename"
+    t.date     "dob"
+    t.string   "contact"
+    t.string   "address"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "email"
   end
 
   create_table "tasks", force: :cascade do |t|

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+<h2>Welcome to NextStep Digital Solution Pvt. Ltd.</h2>
+<h3>Congratulations </h3><span><%= @student.name %></span>
+<p>
+You have successfully enrolled up to <%= @course.name %>,
+your course duration will be: <%= @course.duration %>.<br/>
+<ul>
+  <li>Total Fee => <%= @course.total_fee %></li>
+  <li>Amount Paid => <%= @enroll.fee_paid %></li>
+  <li>Amount Remaining => <%= @enroll.due_fee %></li>
+</ul>
+</p>
+<p>Thanks for joining and have a great day!</p>
+</body>
+</html>

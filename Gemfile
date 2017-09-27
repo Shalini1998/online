@@ -54,6 +54,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem "ckeditor"
 gem "cancancan"
+gem "font-awesome-rails"
 
 
 

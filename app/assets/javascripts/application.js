@@ -14,6 +14,3 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require ckeditor/init
-//= require jquery.dataTables.min
-//= require dataTables.bootstrap.min
-

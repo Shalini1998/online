@@ -18,7 +18,6 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-         
           <td><%= user.email %></td>
           <td><%= user.try(:contact_no) %></td>
           <td><%= user.role %></td>

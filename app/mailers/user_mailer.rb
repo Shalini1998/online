@@ -9,4 +9,11 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Status updation App')
   end
 
+  def registration_notification(enroll)
+    @student = enroll.student
+    @course = enroll.course
+    @enroll = enroll
+    mail(to: @student.email, subject: 'Successfully Enrolled')
+  end
+
 end

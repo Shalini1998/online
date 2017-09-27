@@ -1,0 +1,47 @@
+<%= form_for StudentCourse.new, url: :create_enrollement_courses, method: 'post' do |f| %>
+
+  <div class="form-group">
+    <%= f.label :student_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :student_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:student_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :course_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :course_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:course_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :due_fee, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :due_fee, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:due_fee) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fee_paid, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :fee_paid, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:fee_paid) %>
+  </div>
+    <div class="form-group">
+    <%= f.label :is_paid?, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :is_paid?, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:is_paid?) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                courses_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
