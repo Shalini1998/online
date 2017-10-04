@@ -28,8 +28,12 @@
             </button>
             <a class="navbar-brand" href="index.html">Binary admin</a> 
           </div>
-          <div style="color: white; padding: 15px 50px 5px 50px;           float: right; font-size: 16px;"> Last access : 27 Septembar 2017 &nbsp;  <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> 
+          <div style="color: white; padding: 15px 50px 5px 50px;           float: right; font-size: 16px;"> Last access : 27 Septembar 2017 &nbsp;  <a href="#" class="btn btn-danger square-btn-adjust">Sign Out</a> 
           </div>
+
+
+
+
         </nav>   
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -39,13 +43,13 @@
                 <%= image_tag "ask_an_admin_3.png" %>
               </li>
               <li>
-                <a class="active-menu"  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                <a class="active-menu"  href="/dashboard-admin"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
               </li>
               <li>
-                <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
+                <a  href="/admins/users"><i class="fa fa-user fa-3x"></i> All Users</a>
               </li>
               <li>
-                <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
+                <a  href="/dashboard-task"><i class="fa fa-qrcode fa-3x"></i> Tasks</a>
               </li>
               <li>
                 <a href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
@@ -62,61 +66,6 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
           <div id="page-inner">
-            <div class="row">
-              <div class="col-md-12">
-                <h2>Admin Dashboard</h2>   
-                <h5>Welcome To Admin Dashboard</h5>
-              </div>
-            </div>              
-            <hr />
-            <div class="row">
-              <div class="col-md-3 col-sm-6 col-xs-6">           
-                <div class="panel panel-back noti-box">
-                  <span class="icon-box bg-color-red set-icon">
-                    <i class="fa fa-user-o"></i>
-                  </span>
-                  <div class="text-box" >
-                    <p class="main-text">120 New</p>
-                    <p class="text-muted">Messages</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-6">           
-                <div class="panel panel-back noti-box">
-                  <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-user"></i>
-                  </span>
-                  <div class="text-box" >
-                    <p class="main-text">30 Tasks</p>
-                    <p class="text-muted">Remaining</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-6">           
-                <div class="panel panel-back noti-box">
-                  <span class="icon-box bg-color-blue set-icon">
-                    <i class="fa fa-user"></i>
-                  </span>
-                  <div class="text-box" >
-                    <p class="main-text">240 New</p>
-                    <p class="text-muted">Notifications</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-xs-6">           
-                <div class="panel panel-back noti-box">
-                  <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-user"></i>
-                  </span>
-                  <div class="text-box" >
-                    <p class="main-text">3 Orders</p>
-                    <p class="text-muted">Pending</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
             <hr />
             <%= yield %>
           

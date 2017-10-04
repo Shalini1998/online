@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  get '/dashboard-admin' => "welcome#admins_dashboard"
+  get '/dashboard-task' => "welcome#tasks_dashboard"
   resources :courses do 
     collection do
       get :new_enrollement
@@ -14,7 +15,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admins do
+  
     resources :users do
+      
       collection do
         post :create_users
         get :edit_users
@@ -24,7 +27,10 @@ Rails.application.routes.draw do
         delete :destroy_users
       end
     end
+     resources :tasks
   end
+  
+
 
 
 

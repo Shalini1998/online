@@ -1,0 +1,66 @@
+<%= form_for [:admins,task] , :html => { :class => "form-horizontal task" } do |f| %>
+
+  <% if  @task.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+    <div class="panel-heading">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      </div>
+
+          <div class="panel-body">
+            <ul>
+            <% @task.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+
+      <%= f.hidden_field :user_id, value: current_user.id if user_signed_in? %>
+
+      <div class="form-group">
+        <%= f.label :title, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+          <%= f.text_field :title, :class => 'form-control' %>
+        </div>
+        <%=f.error_span(:title) %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :description, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+        <%= f.text_area :description, class:  'ckeditor form-control' %>
+        </div>
+        <%=f.error_span(:description) %>
+      </div>
+
+
+   <div class="form-group">
+     <% f.label :status , :class => 'control-label col-lg-2' %>
+     <div class="col-lg-10">
+        <%= f.collection_select :status, Task::STATUS, :to_s, :humanize, class: "form-control" %>
+        
+      </div>
+
+    </div>
+
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admins_tasks_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+
+ 
+<% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+   $("ckeditor").ckeditor({
+
+   });
+  });
+</script>

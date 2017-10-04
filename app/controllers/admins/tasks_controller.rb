@@ -39,7 +39,7 @@
     respond_to do |format|
       if @task.save
         UserMailer.welcome_email(current_user).deliver_now
-        format.html { redirect_to @task, notice: 'Status was successfully created.' }
+        format.html { redirect_to admins_task_path, notice: 'Status was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -54,7 +54,7 @@
     respond_to do |format|
       if @task.update_attributes(task_params)
       # if @task.update(task_params)
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.html { redirect_to admins_tasks_path, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
@@ -68,15 +68,10 @@
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
+      format.html { redirect_to admins_tasks_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-
-
-  
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
