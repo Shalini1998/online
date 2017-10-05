@@ -28,11 +28,7 @@
             </button>
             <a class="navbar-brand" href="index.html">Binary admin</a> 
           </div>
-          <div style="color: white; padding: 15px 50px 5px 50px;           float: right; font-size: 16px;"> Last access : 27 Septembar 2017 &nbsp;  <a href="#" class="btn btn-danger square-btn-adjust">Sign Out</a> 
-          </div>
-
-
-
+          <div style="color: white; padding: 15px 50px 5px 50px;           float: right; font-size: 16px;"> Last access : <%= current_user.last_sign_in_at.in_time_zone("Kolkata") %> &nbsp; <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger square-btn-adjust" %>
 
         </nav>   
         <!-- /. NAV TOP  -->
@@ -49,7 +45,7 @@
                 <a  href="/admins/users"><i class="fa fa-user fa-3x"></i> All Users</a>
               </li>
               <li>
-                <a  href="/dashboard-task"><i class="fa fa-qrcode fa-3x"></i> Tasks</a>
+                <a  href="/dashboard-task"><i class="fa fa-qrcode fa-3x"></i> Tasks  </a>
               </li>
               <li>
                 <a href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>

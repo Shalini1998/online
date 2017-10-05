@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/dashboard-admin' => "welcome#admins_dashboard"
   get '/dashboard-task' => "welcome#tasks_dashboard"
-  resources :courses do 
+    resources :courses do 
     collection do
       get :new_enrollement
       post :create_enrollement
