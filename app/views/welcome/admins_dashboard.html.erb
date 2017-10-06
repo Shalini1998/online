@@ -5,6 +5,13 @@
               </div>
             </div>              
             <hr />
+
+           
+
+
+
+
+
             <div class="row">
               <div class="col-md-3 col-sm-6 col-xs-6">           
                 <div class="panel panel-back noti-box">
@@ -32,10 +39,12 @@
                     <i class="fa fa-user"></i>
                   </span>
                   <div class="text-box" >
-                    <p class="main-text"><%= students %> Students</p>
+                    <p class="main-text"><%= admins %> Admins</p>
                   </div>
                 </div>
               </div>
+           <%= pie_chart User.group(:role).count %>
+
               <div class="col-md-3 col-sm-6 col-xs-6">           
               
                   <div class="text-box" >

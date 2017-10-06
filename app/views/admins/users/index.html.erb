@@ -4,6 +4,9 @@
 <div class="new-btn">
   <%= link_to "Add New User", new_admins_user_path, class: "btn btn-primary btn-lg" %>
 </div>
+<%= pie_chart User.group(:role).count %>
+
+
 <div style="margin:10%;"></div>
 <div class="table-responsive">
   <table class="table table-bordered" id="user-listing">
@@ -41,3 +44,4 @@
     $("#user-listing").DataTable();
   });
 </script>
+<script src="chartkick.js"></script>

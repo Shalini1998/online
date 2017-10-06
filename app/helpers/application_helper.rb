@@ -8,8 +8,8 @@ module ApplicationHelper
     User.where(role: "trainee").count
   end
 
-  def students
-    User.where(role: "student").count
+  def admins
+    User.where(role: "admin").count
   end
 
 end

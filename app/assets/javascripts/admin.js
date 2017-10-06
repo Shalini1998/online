@@ -6,5 +6,7 @@
 //= require admin/jquery.dataTables.min
 //= require admin/dataTables.bootstrap.min
 //= require admin/jquery.metisMenu
+//= require chartkick
+//= require highcharts
 //= require admin/custom
 
