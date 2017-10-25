@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921112848) do
+ActiveRecord::Schema.define(version: 20171025060526) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -86,6 +86,10 @@ ActiveRecord::Schema.define(version: 20170921112848) do
     t.string   "role"
     t.string   "username"
     t.string   "contact_no"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

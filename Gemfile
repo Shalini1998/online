@@ -56,7 +56,8 @@ gem "ckeditor"
 gem "cancancan"
 gem "font-awesome-rails"
 gem "chartkick"
-
+gem "geocoder"
+gem "carrierwave"
 
 
 group :development, :test do

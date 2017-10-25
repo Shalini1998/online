@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       collection do
         post :create_users
         get :edit_users
+        get :show_users
       end
       member do
         patch :update_users

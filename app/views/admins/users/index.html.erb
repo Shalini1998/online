@@ -25,6 +25,9 @@
           <td><%= user.try(:contact_no) %></td>
           <td><%= user.role %></td>
           <td>
+
+            <%= link_to t('.show', :default => t("helpers.links.show")),
+                                  admins_user_path(user), class: "btn btn-warning btn-xs" %>
             <%= link_to "Edit", edit_admins_user_path(user), class: "btn btn-warning btn-xs" %>
             
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

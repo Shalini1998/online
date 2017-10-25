@@ -1,9 +1,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  geocoded_by :address   
+  after_validation :geocode          
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
-
+   mount_uploader :image, ImageUploader
   ROLES = %w[admin developer trainee student].freeze
 
   has_many :tasks
